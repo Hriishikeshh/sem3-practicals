@@ -38,8 +38,41 @@ def insertion(arr):
     print(arr)
 
 #selection sort
+def selection(arr):
+    for i in range(size):
+        min_index=i
+        for j in range(i+1,size):
+            if(arr[j]<arr[min_index]):
+                min_index=j
 
+        temp=arr[min_index]
+        arr[min_index]=arr[i]
+        arr[i]=temp
+        print("pass ",i+1," :",arr)
+    
+    print(arr)
 
+#shell sort
+def shell(arr):
+    gap=size//2
+    while(gap>0):
+        j=gap
+        while(j<size):
+            i=j-gap
+            while(i>0):
+                if(arr[i+gap]>arr[i]):
+                    break
+                else:
+                    temp=arr[i+gap]
+                    arr[i+gap]=arr[gap]
+                    arr[gap]=temp
+
+                i=i-gap
+            j+=1
+        gap=gap//2
+    print(arr)
+
+shell(arr)
             
 
 
