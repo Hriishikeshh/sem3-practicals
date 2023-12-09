@@ -158,6 +158,6 @@ int main(){
     seat.display();
     seat.bookseats(1,2,4);
     seat.display();
-    seat.cancelseats(1,2,2);
+    seat.bookseats(1,2,1); 
     seat.display();
 }
