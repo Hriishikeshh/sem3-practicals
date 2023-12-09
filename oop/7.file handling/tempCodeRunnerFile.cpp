@@ -1,0 +1,1 @@
+ fout<<line<<endl;
