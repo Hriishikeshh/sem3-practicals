@@ -54,24 +54,30 @@ def selection(arr):
 
 #shell sort
 def shell(arr):
+    # size = int(input("enter array size :"))
+    # arr = []
+    # for i in range(size):
+    #     a = float(input("enter value :"))
+    #     arr.append(a)
+
     gap=size//2
     while(gap>0):
         j=gap
         while(j<size):
             i=j-gap
-            while(i>0):
+            while(i>=0):
                 if(arr[i+gap]>arr[i]):
                     break
                 else:
                     temp=arr[i+gap]
-                    arr[i+gap]=arr[gap]
-                    arr[gap]=temp
-
+                    arr[i+gap]=arr[i]
+                    arr[i]=temp
                 i=i-gap
             j+=1
+        print("pass :",arr)
         gap=gap//2
-    print(arr)
 
+    print(arr)
 shell(arr)
             
 

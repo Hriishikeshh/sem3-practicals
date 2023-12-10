@@ -1,7 +1,6 @@
 la=["a" ,"b","c","d","k"]
 lb=["b" ,"c","d","a","h"]
 lc=["d" ,"e","f","g"]
-alen=blen=clen=3
 # alen=int(input("no. of cricket students :"))
 # for i in range(alen):
 #     a=input("enter names :")
@@ -80,4 +79,4 @@ def cricket_and_football_not_badminton():
     print(lac)
 cricket_and_football_not_badminton()
 
-#
+
