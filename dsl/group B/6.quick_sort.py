@@ -7,7 +7,6 @@ def partition(high,low,arr):
     for j in range(low,high):
         if(arr[j]<=pivot):
             i=i+1
-
             temp=arr[j]
             arr[j]=arr[i]
             arr[i]=temp

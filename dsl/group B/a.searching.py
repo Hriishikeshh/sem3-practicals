@@ -14,13 +14,9 @@ key=int(input("enter value to check :"))
 def linear_search():
     for i in range(n):
         if(key==array[i]):
-            print("present")
-            break
+            return
 
-        else:
-            print("absent")
-            break
-
+            
 def sentinel_search():
     last=array[n-1]
     array[n-1]=key

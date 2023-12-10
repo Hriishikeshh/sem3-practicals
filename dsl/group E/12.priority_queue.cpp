@@ -3,7 +3,7 @@
 using namespace std;
 
 template<class T>
-#define m 10
+#define m 3
 
 class Item{
     T id;
