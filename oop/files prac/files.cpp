@@ -1,44 +1,42 @@
 #include<iostream>
 #include<fstream>
-#include<string>
 using namespace std;
 
 class file{
-    ofstream filestr;
-
     public:
+        ofstream fobj;
+
         file(){
-            filestr.open("text.txt",ios::app);
+            fobj.open("sample.txt",ios::app);
         }
 
         void appendData(string& data){
-            filestr<<data<<endl;
+            fobj<<data<<endl;
         }
 
         void displaydata(){
-            filestr.close();   //closed for opening and writing
-            ifstream input("text.txt");
-            cout<<"file contents :"<<endl;
+            fobj.close();
+            ifstream ifobj;
+            ifobj.open("sample.txt");
+            
+            cout<<"file data :"<<endl;
+
             string line;
-            while(getline(input,line)){
+            while(getline(ifobj,line)){
                 cout<<line<<endl;
             }
-            input.close();
-            filestr.open("text.txt",ios::app);
-        }
-
-        ~file(){
-            filestr.close();
+            ifobj.close();
+            fobj.open("sample.txt",ios::app);
         }
 };
 
 int main(){
-    //open write in file
 
+    //create and write in file
     fstream fout;
-    fout.open("text.txt",ios::out);
-    string line;
+    fout.open("sample.txt",ios::out);
 
+    string line;
     while(fout){
         getline(cin,line);
         if(line=="-1"){
@@ -48,22 +46,20 @@ int main(){
     }
     fout.close();
 
-    //appending in file
+    //append in file
 
     char choice;
     while(true){
-        cout<<"enter choice to append data(y/n) :";
+        cout<<"wanna append(y/n)? :";
         cin>>choice;
-
         if(choice!='y'){
             break;
         }
 
         file f;
         string data;
-        string line;
         cin.ignore();
-        cout<<"enter data to append :";
+        cout<<"enter data to append:";
         getline(cin,data);
         f.appendData(data);
         f.displaydata();

@@ -39,7 +39,9 @@ class Record{
             return a.code<b.code;
         }
 
-        void search() const{
+
+        vector<Record> Record::r1;
+        void search(){
             int n;
             cout<<"enter code to search and get data:";
             cin>>n;
@@ -59,7 +61,7 @@ class Record{
             }
         }
 };
-vector<Record> Record::r1;
+
 int main(){
     Record obj;
     do{

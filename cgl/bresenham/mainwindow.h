@@ -14,10 +14,19 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+
 private slots:
-    void DDA(int,int,int,int);
     void on_pushButton_clicked();
-    void Paint_recurssive(int,int,int,int,int);
+    void dda(float,float,float,float);
+    void bresenham(int,int,int,int);
+    void rectangle(float,float,float,float);
+    void rhombus(float,float,float,float);
+    void circle(float,float,float,float);
+
+    void on_pushButton_2_clicked();
+
+    void on_pushButton_3_clicked();
+
 private:
     Ui::MainWindow *ui;
 };
