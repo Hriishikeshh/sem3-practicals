@@ -55,11 +55,9 @@ class Jobs{
 };
 
 int main(){
-    Jobs j(10001);
+    Jobs j(3);
     j.enqueue("peon");
     j.enqueue("manager");
     j.enqueue("intern");
-    j.display();
-    j.dequeue();
-    j.display();
+    j.enqueue("intern");
 }

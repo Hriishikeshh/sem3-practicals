@@ -43,14 +43,18 @@ class stack{
         }
 
         int prec(char c){
-            if(c=='^'){
+
+            if(c=='('){
                 return 3;
             }
-            else if(c=='/'||c=='*'){
+            else if(c=='^'){
                 return 2;
             }
-            else if(c=='+'||c=='-'){
+            else if(c=='/'||c=='*'){
                 return 1;
+            }
+            else if(c=='+'||c=='-'){
+                return 0;
             }
             else{
                 return -1;
@@ -60,11 +64,10 @@ class stack{
 
 int main(){
     string exp,result;
-    exp="a+b(c-d)*z^y/j";
+    exp="(a+b*c)/(x+y/z)";
     int n=exp.length();
 
     stack st(n+1);
-
     for(int i=0;i<n;i++){
         string t;
         t=exp[i];

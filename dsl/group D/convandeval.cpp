@@ -1,4 +1,4 @@
-#include<iostream>
+#include<bits/stdc++.h>
 #include<string>
 using namespace std;
 
@@ -75,28 +75,33 @@ int evaluation(string s) {
             x1 = obj.getTop();
             obj.pop();
             switch (s[i]) {
-            case '+':
-                r = x1 + x2;
-                obj.push(r);
-                break;
+                case '+':
+                    r = x1 + x2;
+                    obj.push(r);
+                    break;
 
-            case '-':
-                r = x1 - x2;
-                obj.push(r);
-                break;
+                case '-':
+                    r = x1 - x2;
+                    obj.push(r);
+                    break;
 
-            case '*':
-                r = x1 * x2;
-                obj.push(r);
-                break;
+                case '*':
+                    r = x1 * x2;
+                    obj.push(r);
+                    break;
 
-            case '/':
-                r = x1 / x2;
-                obj.push(r);
-                break;
+                case '/':
+                    r = x1 / x2;
+                    obj.push(r);
+                    break;
 
-            default:
-                break;
+                case '$':
+                    r = x1 ^ x2;
+                    obj.push(r);
+                    break;
+
+                default:
+                    break;
             }
         }
     }
@@ -105,11 +110,10 @@ int evaluation(string s) {
 
 int main() {
     string exp, result;
-    exp = "a+b*(c-d)";
+    exp = "(a+b*c)/(x+y/z)";
     int n = exp.length();
 
     Stack st(n + 1);
-
     for (int i = 0; i < n; i++) {
         string t;
         t = exp[i];
@@ -142,7 +146,6 @@ int main() {
     }
 
     cout << "Postfix expression: " << result << endl;
-
     cout << "Evaluation: " << evaluation(result) << endl;
 
     return 0;

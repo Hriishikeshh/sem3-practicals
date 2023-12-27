@@ -59,6 +59,7 @@ bool isoperand(char x){
 		return true;
 	}
 }
+
 int pre(char c){
 	if(c=='+'||c=='-'){
 		return 1;
@@ -76,15 +77,18 @@ string post(string s){
 	stack obj;
 	int n=s.size();
 	for (int i=0;i<n;i++){
+		
 		if (isoperand(s[i])){
 			post=post+s[i];
 		}
+
 		else if(s[i]==')'){
 			while(obj.getTop()!='('){
 				post=post+obj.pop();
 			}
 			obj.pop();
 		}
+
 		else{
 			if(obj.isempty()){
 				obj.push(s[i]);
