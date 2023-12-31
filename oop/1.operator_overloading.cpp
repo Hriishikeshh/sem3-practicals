@@ -26,6 +26,14 @@ class complex{
             return minus;
         }
 
+        // overloading ++
+        complex operator++(complex e){
+            complex increment;
+            increment.real=e.real++;
+            increment.imag=e.imag++;
+            return increment;
+        }
+
         //overloading insertion
         friend istream& operator>>(istream& in,complex& t){
             cout<<"enter real part :"<<endl;
@@ -44,15 +52,17 @@ class complex{
 };
 
 int main(){
-    complex c1,c2,c3,c4;
+    complex c1,c2,c3,c4,c5;
     cout<<"1st :"<<endl;
     cin>>c1;
     cout<<"2nd :"<<endl;
     cin>>c2;
     c3=c1+c2;
     c4=c1-c2;
+    c5=c1+1;
 
     cout<<"sum:"<<c3;
     cout<<"difference:"<<c4;
+    cout<<"increment:"<<c5;
 
 }

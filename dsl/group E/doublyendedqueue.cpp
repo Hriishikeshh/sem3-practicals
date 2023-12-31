@@ -38,7 +38,6 @@ public:
         else{
             front--;
         }
-
         arr[front] = x;
         return true;
     }
@@ -58,7 +57,6 @@ public:
         else{
             rear++;
         }
-
         arr[rear] = x;
         return true;
     }
@@ -70,7 +68,7 @@ public:
         }
 
         int ans = arr[rear];
-        arr[rear] = -1;
+        arr[rear] = -1;  //logical deletion
 
         if(front == rear){
             front = rear = -1;

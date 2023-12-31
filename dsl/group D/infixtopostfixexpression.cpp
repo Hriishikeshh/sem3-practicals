@@ -65,8 +65,8 @@ class stack{
 int main(){
     string exp,result;
     exp="(a+b*c)/(x+y/z)";
+    
     int n=exp.length();
-
     stack st(n+1);
     for(int i=0;i<n;i++){
         string t;

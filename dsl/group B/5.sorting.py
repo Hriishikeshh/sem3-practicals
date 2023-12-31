@@ -21,6 +21,7 @@ def bubble(arr):
             print("pass",i+1,": ",arr)
 
     print("bubble sort :")
+bubble(arr)
 
 #insertion sort
 def insertion(arr):
@@ -52,7 +53,6 @@ def selection(arr):
         print("pass ",i+1," :",arr)
     
     print(arr)
-selection(arr)
 
 #shell sort
 def shell(arr):

@@ -34,7 +34,7 @@ def fibonacci_search():
             print("pass : mid:", mid, "value:", a[mid])
             m=m-2
 
-    if(fib[m-1] and a[offset]==x):
+    if(fib[m-1] and a[offset+1]==x):
         print("pass : mid:", mid, "value:", a[mid])
         return(offset+1)
     return -1
